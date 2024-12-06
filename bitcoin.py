@@ -5,5 +5,3 @@ def get_bitcoin_price():
     response = request.json()
     bitcoin_price = response["bpi"]["USD"]["rate_float"]
     return bitcoin_price
-if __name__ == "__main__":
-    get_bitcoin_price

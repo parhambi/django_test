@@ -40,7 +40,6 @@ def vote(request,question_id):
         # with POST data. This prevents data from being posted twice if a
         # user hits the Back button.
         return HttpResponseRedirect(reverse("myapp:results",args=(question_id,)))
-def bitcoin(request):
+def btc(request):
     price = get_bitcoin_price()
-    HttpResponse(price)
-print(get_bitcoin_price())
+    return render(request,"myapp/bitcoin.html",{"price":price})
