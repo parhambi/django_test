@@ -1,10 +1,14 @@
 <html lang="en">
+{%load static%}
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BTC price</title>
+    <link rel="stylesheet" href="{%static 'bitcoin.css'%}">
+    <title>crypto price</title>
 </head>
 <body>
-    <h1>{{price}}</h1>
+    <div id="price_box">
+        <h1>{{price}}</h1>
+    </div>
 </body>
 </html>

@@ -10,7 +10,7 @@ from django.utils import timezone
 from django.db.models import F
 from django.urls import reverse
 from django.views import generic
-from bitcoin import get_bitcoin_price
+from bitcoin import get_crypto_price
 # Create your views here.
 class HomeView(generic.ListView):
     template_name = "myapp/index.html"
@@ -40,6 +40,7 @@ def vote(request,question_id):
         # with POST data. This prevents data from being posted twice if a
         # user hits the Back button.
         return HttpResponseRedirect(reverse("myapp:results",args=(question_id,)))
-def btc(request):
-    price = get_bitcoin_price()
+    
+def btc(request,crypto_asset):
+    price = get_crypto_price(crypto_asset)
     return render(request,"myapp/bitcoin.html",{"price":price})
